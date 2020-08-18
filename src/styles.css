@@ -1,0 +1,76 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.course-grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+
+  /* grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-columns: 1fr; */
+
+  border: 2px solid black;
+  width: 700px;
+  height: 620px;
+
+  position: relative;
+
+  /* float: right; */
+  margin: auto;
+}
+
+.semester-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+
+  /* position: relative; no need, since we make the wrapper into draggable*/
+
+  margin: 0;
+  padding: 10px;
+
+  border: 2px solid grey;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.class-item {
+  margin: 5px;
+  border: 1px solid orange;
+  border-radius: 10px;
+  width: 80px;
+  height: 45px;
+  background-color: lavender;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+.dragged {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.placeholder {
+  visibility: hidden;
+}
+
+.semester-handle {
+  /* containing element is a Draggable, which has transform 0 */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 1px solid black;
+  width: 10%;
+  height: 15%;
+}
